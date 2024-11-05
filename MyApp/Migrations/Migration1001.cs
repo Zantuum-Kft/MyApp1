@@ -18,13 +18,13 @@ namespace MyApp.Migrations
         {
             [References(typeof(Address))]
             public long? PermanentAddressId { get; set; }
-            [Ref(Model = nameof(Address), SelfId = nameof(PermanentAddressId), RefId = nameof(Address.Id))]
+            [Ref(Model = nameof(Address), SelfId = nameof(PermanentAddressId), RefId = nameof(Address.Id), RefLabel = nameof(Address.AddressText))]
             [Reference]
             public Address? PermanentAddress { get; set; }
 
             [References(typeof(Address))]
             public long? PostalAddressId { get; set; }
-            [Ref(Model = nameof(Address), SelfId = nameof(PostalAddressId), RefId = nameof(Address.Id))]
+            [Ref(Model = nameof(Address), SelfId = nameof(PostalAddressId), RefId = nameof(Address.Id), RefLabel = nameof(Address.AddressText))]
             [Reference]
             public Address? PostalAddress { get; set; }
         }
